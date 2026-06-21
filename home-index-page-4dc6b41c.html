@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ayx · 站点说明与索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4ed;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            color: #2e2b27;
+            line-height: 1.65;
+            padding: 2.5rem 1.5rem 0;
+        }
+
+        .page {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #fcfaf6;
+            border-radius: 28px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.5rem 2.8rem;
+        }
+
+        /* 标题系统 */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f1b18;
+            border-left: 6px solid #b7a99a;
+            padding-left: 1.2rem;
+            margin: 0 0 0.8rem 0;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.65rem;
+            font-weight: 450;
+            color: #2e2824;
+            margin: 3rem 0 1rem 0;
+            border-bottom: 1px solid #e5ddd0;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 480;
+            margin: 1.8rem 0 0.6rem 0;
+            color: #3b342f;
+        }
+
+        p {
+            margin: 0 0 1.2rem 0;
+            text-align: justify;
+        }
+
+        a {
+            color: #4f3e2e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.1s ease;
+        }
+
+        a:hover {
+            color: #8a735f;
+        }
+
+        /* 段落中的引用块（支持内联或块级引语） */
+        blockquote {
+            background: #f2ede4;
+            border-left: 5px solid #c3b4a2;
+            margin: 1.8rem 0 1.8rem 0.2rem;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #3c342e;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        .insight-box {
+            background: #efebe3;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0;
+            box-shadow: inset 0 0 0 1px #e2d8ca;
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem 2.2rem;
+            margin: 1.8rem 0 0.5rem;
+        }
+
+        .feature-item {
+            background: #f9f5ed;
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            border: 1px solid #e6ddd1;
+            transition: background 0.1s;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 550;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: #302a25;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #4a423c;
+        }
+
+        .faq-item {
+            margin: 1.8rem 0 1.2rem 0;
+            border-bottom: 1px dashed #ded4c5;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 520;
+            font-size: 1.1rem;
+            color: #2e2721;
+            margin-bottom: 0.35rem;
+        }
+
+        .faq-a {
+            color: #4b433c;
+            padding-left: 0.25rem;
+        }
+
+        .footer-links {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e4dbcc;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2.8rem;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 0.95rem;
+        }
+
+        .footer-links span {
+            color: #6f6459;
+        }
+
+        .footer-links a {
+            white-space: nowrap;
+        }
+
+        /* 响应式：小屏降低内边距，grid 切换单列 */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page {
+                padding: 1.6rem 1.2rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+                padding-left: 0.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: flex-start;
+            }
+            blockquote {
+                margin-left: 0;
+                padding: 1rem 1.2rem;
+            }
+            .insight-box {
+                padding: 1.2rem 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            .page {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+
+        /* 克制装饰 */
+        .small-caption {
+            color: #6c6258;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            margin: 0.2rem 0 1.8rem 0;
+            color: #524a42;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Hero 区 -->
+    <h1>ayx · 站点索引与说明</h1>
+    <p class="hero-sub">
+        对 <a href="https://home-index-ayx.com">ayx</a> 这一独立域名的结构、定位与使用逻辑进行简要说明。
+        内容基于公开信息整理，可作为了解该站点的初始参考。
+    </p>
+
+    <!-- 站点定位/介绍 -->
+    <p>
+        <a href="https://home-index-ayx.com">ayx</a> 是一个以索引与聚合为功能的轻量页面，集中放置了若干经过筛选的链接与分类入口。
+        页面本身不存储用户数据，不设交互后台，主要承担“导航枢纽”的角色。
+        该域名未关联任何商业或盈利性服务，其内容编排以清晰、低噪为原则。
+    </p>
+
+    <!-- 提示框/调用块 -->
+    <div class="insight-box">
+        <p><strong>▎说明</strong> 本站所有外部链接均指向独立的第三方资源或平台。维护者不对链接指向的页面内容做背书或担保。
+        建议使用者根据自身判断评估各站点的可信度与适用性。</p>
+    </div>
+
+    <!-- 优势区 / 特点 (落地页常见区块) -->
+    <h2>特点与设计思路</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>扁平结构</strong>
+            <p>链接之间无层级依赖，所有入口均在首页直接可见，无需二次跳转。期望减少注意力损耗。</p>
+        </div>
+        <div class="feature-item">
+            <strong>静态化部署</strong>
+            <p>未使用数据库或后端框架，整站为纯前端静态页面，加载速度较快，且利于版本管理与归档。</p>
+        </div>
+        <div class="feature-item">
+            <strong>低维护干扰</strong>
+            <p>不包含推送、通知、弹窗或会话跟踪。访问记录仅由浏览器本地保存，服务器不进行日志分析。</p>
+        </div>
+        <div class="feature-item">
+            <strong>极简排版</strong>
+            <p>内容以文字链接与分组标题为主。无广告区块、横幅或付费推广，视觉干扰控制在较低水平。</p>
+        </div>
+    </div>
+
+    <!-- 说明区 / 使用场景 -->
+    <h2>适用场景举例</h2>
+    <p>
+        日常浏览时，可将 <a href="https://home-index-ayx.com">ayx</a> 设为浏览器起始页或书签栏的固定入口，
+        用以快速抵达常用的工具站点、文档仓库或信息面板。对于偏好清晰导航且不希望被推荐算法引导的用户，
+        这一静态索引页提供了一种轻量且自主的选择。
+    </p>
+
+    <blockquote>
+        <p>“索引页的核心价值不是提供信息，而是减少寻找信息时的摩擦。” —— 这句话恰好概括了该项目的基本出发点。</p>
+    </blockquote>
+
+    <p>
+        开发者或研究人员也可将此页作为测试用域名，用于调试浏览器起始行为、分析纯静态页面的加载性能，
+        或验证 CSP（内容安全策略）配置。由于其不包含第三方请求，亦可作为简易的断网测试页面。
+    </p>
+
+    <!-- FAQ 摘要 (两个真实风格的问题) -->
+    <h2>常见疑问摘要</h2>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：这个页面会收集我的浏览数据吗？</div>
+        <div class="faq-a">A：不收集。整个页面没有部署任何分析脚本、跟踪像素或 Cookie（不含第三方 cookie）。
+        你的访问流量仅经由域名解析与 CDN 缓存，服务器不记录 IP 或 user-agent。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：链接失效或者内容过时怎么办？</div>
+        <div class="faq-a">A：链接指向的外部资源可能不定期变动。项目维护者会进行周期性检查，但无法保证所有链接永久有效。
+        如果发现明显错误，可通过页面底部的联系渠道反馈（目前暂未开放留言表单，仅提供邮件前缀索引）。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：我可以复制这个页面的结构用于自己的索引站吗？</div>
+        <div class="faq-a">A：可以。本页的 HTML 与 CSS 未附加任何使用限制。你可以基于它做二次修改或重新设计，
+        不需署名，但建议替换掉具体链接内容以避免误导。</div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <span><a href="https://home-index-ayx.com">ayx</a> · 独立索引页</span>
+        <span>样式参考：文章排版 / 米白背景</span>
+        <span>版本·静态 2308</span>
+    </div>
+
+    <!-- 微小底边留白 -->
+    <div style="height: 1.2rem;"></div>
+
+</div>
+</body>
+</html>
