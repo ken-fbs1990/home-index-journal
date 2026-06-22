@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b体育 | 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d7 0%, #f7d9c4 30%, #f5d0b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            color: #2e241e;
+        }
+
+        .wrapper {
+            max-width: 860px;
+            width: 100%;
+        }
+
+        /* hero */
+        .hero {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            padding: 3.2rem 2.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px -12px rgba(100, 60, 30, 0.18);
+            text-align: center;
+            border: 1px solid #fae3d0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #542e1a;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            color: #6f4b32;
+            max-width: 560px;
+            margin: 0 auto 1.6rem;
+            opacity: 0.88;
+            border-bottom: 2px solid #ecccaf;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin: 0 auto;
+            color: #3b2c23;
+        }
+
+        .hero .tagline {
+            margin-top: 1.2rem;
+            background: #f8ede2;
+            border-radius: 60px;
+            padding: 0.6rem 1.5rem;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #5e3b28;
+            border: 1px solid #e7cbb6;
+        }
+
+        /* cards section */
+        .section {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.4rem 2.6rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 12px 28px -8px rgba(80, 50, 30, 0.10);
+            border: 1px solid #f5dfce;
+        }
+
+        .section h2 {
+            font-size: 1.6rem;
+            font-weight: 550;
+            color: #4b2d1d;
+            margin-bottom: 1.2rem;
+            padding-left: 0.6rem;
+            border-left: 6px solid #dba883;
+            padding-left: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.4rem 0 0.6rem;
+        }
+
+        .feature-item {
+            background: #fcf6f0;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #efd9c6;
+            transition: all 0.15s;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #432e20;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-item span {
+            font-size: 0.96rem;
+            color: #4d382b;
+        }
+
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eedace;
+        }
+
+        .faq-item:last-child {
+            border-bottom: 0;
+            padding-bottom: 0.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #3b271c;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-item .q::before {
+            content: "▸";
+            color: #b8815f;
+            font-size: 1.2rem;
+        }
+
+        .faq-item .a {
+            color: #4d382a;
+            padding-left: 1.6rem;
+            font-size: 0.98rem;
+        }
+
+        .reminder-box {
+            background: #f9eee6;
+            border-radius: 24px;
+            padding: 1.6rem 2rem;
+            margin: 1.6rem 0 0.8rem;
+            border-left: 8px solid #c59778;
+        }
+
+        .reminder-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .link-item {
+            display: inline-block;
+            background: #ffffff;
+            border-radius: 50px;
+            padding: 0.6rem 1.8rem;
+            font-weight: 500;
+            color: #3d261a;
+            border: 1px solid #dbbca2;
+            transition: 0.2s;
+            text-decoration: none;
+            margin: 0.4rem 0.2rem;
+        }
+
+        .link-item:hover {
+            background: #f7e4d4;
+            border-color: #b88a6a;
+            box-shadow: 0 4px 12px rgba(140, 90, 50, 0.10);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 1.4rem;
+            margin-top: 2.4rem;
+            padding: 1.4rem 0 0.6rem;
+            border-top: 2px solid #ecd5c0;
+        }
+
+        .footer-links a {
+            color: #4b3122;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+            border-bottom: 1px solid transparent;
+            transition: 0.1s;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #a77c5f;
+        }
+
+        .footnote {
+            text-align: center;
+            margin-top: 1.6rem;
+            font-size: 0.85rem;
+            color: #5e4534;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero { padding: 2rem 1.4rem; }
+            .hero h1 { font-size: 2rem; }
+            .section { padding: 1.8rem 1.2rem; }
+            .feature-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .reminder-box { padding: 1.2rem 1.2rem; }
+            .footer-links { flex-direction: column; align-items: center; gap: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>b体育 · 简明访问指南</h1>
+        <div class="sub">浏览前提醒 · 实用信息</div>
+        <p>
+            如果你正在寻找一个稳定的体育娱乐平台，<a href="https://cn-cns-bsport.com" style="text-decoration: none; color: #a8683e; font-weight: 600;">b体育</a> 是一个常见的参考选择。
+            本页整理了访问前需要了解的基本事项、平台特点以及常见疑问，方便你快速评估。
+        </p>
+        <div class="tagline">📌 请先阅读下方说明，再决定是否进一步了解</div>
+    </div>
+
+    <!-- 优势区：简明特点 -->
+    <div class="section">
+        <h2>⚡ 平台特点速览</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>界面适应</strong>
+                <span>响应式设计，电脑与手机均可直接加载，无需额外配置。</span>
+            </div>
+            <div class="feature-item">
+                <strong>体育项目覆盖</strong>
+                <span>足球、篮球、网球等主流赛事，以及部分区域特色项目。</span>
+            </div>
+            <div class="feature-item">
+                <strong>账户管理</strong>
+                <span>注册流程清晰，支持常见验证方式，建议使用稳定网络。</span>
+            </div>
+            <div class="feature-item">
+                <strong>辅助功能</strong>
+                <span>提供基础统计与赛事列表，便于快速浏览实时信息。</span>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.98rem; color: #5e4232;">
+            💡 以上为常见特征整理，实际功能以平台最新版本为准。
+        </p>
+    </div>
+
+    <!-- 说明区 + 访问提醒 -->
+    <div class="section">
+        <h2>📋 使用前的提醒</h2>
+        <div class="reminder-box">
+            <p><strong>🔸 网络与访问环境</strong><br>
+            建议使用稳定的网络连接。部分地区可能存在访问限制，可以尝试更换 DNS 或使用常规网络工具。</p>
+            <p style="margin-top: 0.8rem;"><strong>🔸 账户安全</strong><br>
+            不要向他人透露密码或二次验证信息。官方不会主动索要你的账户凭据。</p>
+            <p style="margin-top: 0.8rem;"><strong>🔸 信息核实</strong><br>
+            平台规则、优惠活动或赛事列表可能不定期调整，以 <a href="https://cn-cns-bsport.com" style="color: #8f5d3b; font-weight: 500; text-decoration: underline;">b体育</a> 站内公告为准。</p>
+        </div>
+        <p style="font-size: 0.96rem; color: #553e2e;">
+            ⚠️ 以上提醒基于常规使用场景，具体请根据自身情况判断。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section">
+        <h2>❓ 常见疑问（FAQ 摘要）</h2>
+        <div class="faq-item">
+            <div class="q">是否需要注册才能浏览内容？</div>
+            <div class="a">部分赛事列表和基础信息可以直接查看，但参与互动或使用完整功能通常需要注册账户。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">移动端体验如何？</div>
+            <div class="a">页面针对手机屏幕做了适配，菜单和赛事卡片会重新排列，日常使用流畅。如果遇到显示异常，可以尝试刷新或清理缓存。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">如何获取最新活动信息？</div>
+            <div class="a">登录后通常可以在首页或个人中心看到活动入口。你也可以关注 <a href="https://cn-cns-bsport.com" style="color: #8f5d3b; font-weight: 500; text-decoration: underline;">b体育</a> 站内通知横幅。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">遇到加载缓慢怎么办？</div>
+            <div class="a">尝试切换网络环境（例如 Wi-Fi 与移动数据互换），或关闭后台占用带宽的应用。如果持续异常，可能是地区性网络波动。</div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.92rem; color: #624b39;">
+            📎 更多细节建议直接查阅平台上的帮助中心或联系客服（如果可用）。
+        </p>
+    </div>
+
+    <!-- 底部相关链接区域（非入口诱导，纯信息） -->
+    <div class="section" style="padding-bottom: 1.8rem;">
+        <h2>🔗 相关参考</h2>
+        <p style="margin-bottom: 0.6rem; color: #463025;">
+            以下链接可供进一步了解平台信息（均指向同一资源）：
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem;">
+            <a href="https://cn-cns-bsport.com" class="link-item">b体育</a>
+            <a href="https://cn-cns-bsport.com" class="link-item">b体育</a>
+            <a href="https://cn-cns-bsport.com" class="link-item">b体育</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://cn-cns-bsport.com">b体育</a>
+            <a href="https://cn-cns-bsport.com">b体育</a>
+            <a href="https://cn-cns-bsport.com">b体育</a>
+        </div>
+        <div class="footnote">
+            本介绍页仅作信息整理，不构成任何诱导或承诺。请自行判断并遵守当地法律法规。
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
